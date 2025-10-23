@@ -64,11 +64,20 @@ body {
 
 /* Movie Card Styles */
 .movie-card {
-  background-color: #272727;
+  /* background-color: #272727; */
   border-radius: 8px;
   overflow: hidden;
   transition: transform 0.2s ease-in-out;
   box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.5);
+}
+.card-good {
+  background-color: green;
+}
+.card-ok {
+  background-color: rgb(203, 200, 17);
+}
+.card-bad {
+  background-color: rgb(128, 0, 0);
 }
 
 .movie-card:hover {
