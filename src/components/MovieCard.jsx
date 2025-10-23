@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 function MovieCard({ movie, isWatchlisted, toggleWatchlist }) {
   let handleImage = (e) => {
@@ -8,7 +9,7 @@ function MovieCard({ movie, isWatchlisted, toggleWatchlist }) {
   let addClassForRating = (rating) => {
     if (rating >= 8) {
       return "rating-good";
-    } else if (rating > 5 && rating < 8) {
+    } else if (rating > 5) {
       return "rating-ok";
     } else {
       return "rating-bad";
@@ -23,7 +24,9 @@ function MovieCard({ movie, isWatchlisted, toggleWatchlist }) {
         onError={handleImage}
       />
       <div className="movie-card-info">
-        <h3 className="movie-card-title">{movie.title}</h3>
+        <h3 className="movie-card-title">
+          <Link to={`/movie/${movie.id}`}>{movie.title}</Link>
+        </h3>
         <div>
           <span
             className={` movie-card-rating  ${addClassForRating(movie.rating)}`}

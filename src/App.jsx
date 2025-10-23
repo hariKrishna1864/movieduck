@@ -2,6 +2,7 @@ import "./App.css";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import MovieGrid from "./components/MoviesGrid";
+import MovieDetails from "./components/MovieDetails";
 import Watchlist from "./components/Watchlist";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -19,7 +20,7 @@ function App() {
   };
   useEffect(() => {
     fetch("movies.json")
-      .then((response) => response.json())
+      .then((res) => res.json())
       .then((data) => setMovies(data));
   }, []);
 
@@ -60,6 +61,10 @@ function App() {
                   />
                 }
               ></Route>
+              <Route
+                path="/movie/:id"
+                element={<MovieDetails movies={movies} />}
+              />
             </Routes>
           </Router>
         </div>

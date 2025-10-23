@@ -6,7 +6,7 @@ function Footer() {
     <>
       <footer className="footer">
         <p className="footer-text">
-          &copy; {currentYear} Movieduck, All rights reserved
+          &copy; {currentYear} Movieduckk, All rights reserved
         </p>
       </footer>
     </>
